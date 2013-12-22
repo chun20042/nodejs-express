@@ -35,6 +35,10 @@ app.get('/hello', hello.index);
 app.get('/hi', hello.chun);
 app.get('/1/time', api.time);
 app.get('/info', api.info);
+app.get('/1/user/:nickname', api.read);
+app.post('/1/user/:nickname', api.create);
+app.put('/1/user/:nickname', api.update);
+app.delete('/1/user/:nickname', api.delete);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
